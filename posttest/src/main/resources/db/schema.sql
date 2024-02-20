@@ -9,8 +9,8 @@ CREATE TABLE user_ticket (
     userId INTEGER NOT NULL,
     ticket VARCHAR(6),
     amount INTEGER,
-    FOREIGN KEY (userId) REFERENCES user_account(userId)
-    FOREIGN KEY (ticket) REFERENCES lottery(ticket)
+    FOREIGN KEY (userId) REFERENCES user_account(userId),
+    FOREIGN KEY (ticket) REFERENCES lottery(ticketId)
 
 );
 
