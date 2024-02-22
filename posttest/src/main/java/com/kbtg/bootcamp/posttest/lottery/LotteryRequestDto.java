@@ -12,6 +12,15 @@ public class LotteryRequest {
     public LotteryRequest(){
     }
 
+    public String getTicket() {
+        return ticket;
+    }
 
+    public Integer getPrice() {
+        return price;
+    }
 
+    public Integer getAmount() {
+        return amount;
+    }
 }
