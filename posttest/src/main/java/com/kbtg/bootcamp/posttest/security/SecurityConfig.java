@@ -29,6 +29,7 @@ public class SecurityConfig {
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers("/lotteries").permitAll()
                         .requestMatchers("/users/**").hasAnyRole("MEMBER", "ADMIN")
                         .requestMatchers("/admin/**").hasAnyRole("ADMIN")
 

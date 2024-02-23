@@ -13,9 +13,15 @@ public class Lottery {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ticketId;
+
+    @Column(name = "ticket")
     private String ticket;
+
+    @Column(name = "price")
     @Setter
     private Integer price;
+
+    @Column(name = "amount")
     @Setter
     private Integer amount;
 

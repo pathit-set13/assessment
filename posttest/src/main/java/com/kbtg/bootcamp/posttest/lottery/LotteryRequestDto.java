@@ -1,26 +1,17 @@
 package com.kbtg.bootcamp.posttest.lottery;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-public class LotteryRequest {
+public class LotteryRequestDto {
 
+    @Setter
     private String ticket;
     private Integer price;
     private Integer amount;
 
-    public LotteryRequest(){
+    public LotteryRequestDto(){
     }
 
-    public String getTicket() {
-        return ticket;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public Integer getAmount() {
-        return amount;
-    }
 }

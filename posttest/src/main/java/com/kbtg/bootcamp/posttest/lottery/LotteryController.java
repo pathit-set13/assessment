@@ -1,8 +1,6 @@
 package com.kbtg.bootcamp.posttest.lottery;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +17,11 @@ public class LotteryController {
     @GetMapping("")
     public List<Lottery> getLotteryList() {
         return this.lotteryService.getLotteryList();
+    }
+
+    @PostMapping("")
+    public Lottery addLotteryTicket(@RequestBody LotteryRequestDto lotteryRequestDto) throws Exception {
+        return lotteryService.addLotteryTicket(lotteryRequestDto);
     }
 
 }

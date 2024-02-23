@@ -17,7 +17,7 @@ public class LotteryService {
        return lotteryRepository.findAll();
     }
 
-    public Lottery addLottery(LotteryRequest request) throws Exception{
+    public Lottery addLotteryTicket(LotteryRequestDto request) throws Exception{
         Lottery lottery = new Lottery();
         lottery.setTicket(request.getTicket());
         lottery.setPrice(request.getPrice());
