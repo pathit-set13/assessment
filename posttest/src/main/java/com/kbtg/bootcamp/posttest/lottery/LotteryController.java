@@ -10,13 +10,16 @@ public class LotteryController {
 
     private final LotteryService lotteryService;
 
-    public LotteryController(LotteryService lotteryService) {
+    private final LotteryRepository lotteryRepository;
+
+    public LotteryController(LotteryService lotteryService, LotteryRepository lotteryRepository) {
         this.lotteryService = lotteryService;
+        this.lotteryRepository = lotteryRepository;
     }
 
     @GetMapping("")
     public List<Lottery> getLotteryList() {
-        return this.lotteryService.getLotteryList();
+        return lotteryRepository.findAll();
     }
 
     @PostMapping("")
