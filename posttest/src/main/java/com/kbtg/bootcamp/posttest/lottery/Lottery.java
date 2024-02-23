@@ -11,7 +11,7 @@ public class Lottery {
 
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ticketId;
 
     @Column(name = "ticket")
