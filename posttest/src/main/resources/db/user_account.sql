@@ -1,2 +1,2 @@
-INSERT INTO user_account (username, password) VALUES ("admin", "password", "ADMIN");
-INSERT INTO user_account (username, password) VALUES ("member", "password", "MEMBER");
+--INSERT INTO user_account (username, password) VALUES ("admin", "password", "ADMIN");
+--INSERT INTO user_account (username, password) VALUES ("member", "password", "MEMBER");
