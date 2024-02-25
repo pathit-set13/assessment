@@ -8,23 +8,33 @@ import java.util.List;
 
 public class UserService {
 
-//    @PersistenceContext
-//    private EntityManager entityManager;
-
     List<UserAccount> userAccountList = new ArrayList<>();
 
+    private final UserAccount userAccount;
+
+    public UserService(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
+
+    public UserAccount userAccessEndPoint() {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+        UserAccount user = new UserAccount(userAccount.getUsername(), encoder.encode(userAccount.getPassword()));
+        user.setRoles(List.of(userAccount.roles.toString()));
+        userAccountList.add(user);
+        return user;
+    }
+
+    public UserAccount adminAccessEndPoint() {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+        UserAccount admin = new UserAccount(userAccount.getUsername(), encoder.encode(userAccount.getPassword()));
+        admin.setRoles(List.of(userAccount.roles.toString()));
+        userAccountList.add(admin);
+        return admin;
+    }
+
     public UserAccount findByUsername(String username) {
-//        // Fetch user details from the database based on the username
-//        List<UserAccount> result = entityManager.createQuery(
-//                        "SELECT u FROM UserAccount u WHERE u.username = :username", UserAccount.class)
-//                .setParameter("username", username)
-//                .getResultList();
-//
-//        if (!result.isEmpty()) {
-//            return result.get(0);
-//        } else {
-//            throw new UsernameNotFoundException("No user was found");
-//        }
         return userAccountList
                 .stream()
                 .filter(u -> u.getUsername().equals(username))
@@ -32,4 +42,5 @@ public class UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("No user was found"));
 
     }
+
 }
