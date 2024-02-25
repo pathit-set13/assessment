@@ -1,20 +1,33 @@
-package com.kbtg.bootcamp.posttest.security;
+package com.kbtg.bootcamp.posttest.user;
 
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
-public class CustomUserDetail implements UserDetails {
+@Entity
+@Table(name = "user_account")
+public class UserAccount implements UserDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
+    private Integer userId;
+
+    @Column(name = "user_role")
     Set<String> roles = new HashSet<>();
+
     Set<String> permissions = new HashSet<>();
 
-    private String username;
-    private String password;
+    @Column(name = "user_name")
+    private final String username;
 
-    public CustomUserDetail(String username, String password) {
+    @Column(name = "user_password")
+    private final String password;
+
+    public UserAccount(String username, String password) {
         this.username = username;
         this.password = password;
     }
