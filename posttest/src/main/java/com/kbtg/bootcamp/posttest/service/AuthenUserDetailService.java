@@ -1,6 +1,6 @@
 package com.kbtg.bootcamp.posttest.service;
 
-import com.kbtg.bootcamp.posttest.repository.UserRepository;
+import com.kbtg.bootcamp.posttest.user.UserRep;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 public class AuthenUserDetailService implements UserDetailsService {
 
 
-    private final UserRepository userRepository;
+    private final UserRep userRep;
 
-    public AuthenUserDetailService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public AuthenUserDetailService(UserRep userRep) {
+        this.userRep = userRep;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findUserByUsername(username);
+        return userRep.findUserByUsername(username);
     }
 }
