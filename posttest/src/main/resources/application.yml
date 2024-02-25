@@ -1,15 +1,15 @@
-spring:
-  h2:
-    console:
-      path: /h2-console
-      enabled: true
-  datasource:
-    url: jdbc:postgresql://localhost:5432/lottery_db
-    driverClassName: org.h2.Driver
-    username: admin
-    password: password
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: true
-    hibernate:
-      ddl-auto: none
+#spring:
+#  h2:
+#    console:
+#      path: /h2-console
+#      enabled: true
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/lottery_db
+#    driverClassName: org.postgresql.Driver
+#    username: admin
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    defer-datasource-initialization: true
+#    hibernate:
+#      ddl-auto: none
