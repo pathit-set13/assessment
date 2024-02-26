@@ -4,10 +4,12 @@ import com.kbtg.bootcamp.posttest.lottery.Lottery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserService {
 
     List<UserAccount> userAccountList = new ArrayList<>();

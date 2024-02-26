@@ -1,4 +1,4 @@
-package com.kbtg.bootcamp.posttest.service;
+package com.kbtg.bootcamp.posttest.security;
 
 import com.kbtg.bootcamp.posttest.user.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;

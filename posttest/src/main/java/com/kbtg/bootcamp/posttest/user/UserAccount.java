@@ -1,6 +1,6 @@
 package com.kbtg.bootcamp.posttest.user;
 
-import com.kbtg.bootcamp.posttest.UserTicket;
+import com.kbtg.bootcamp.posttest.useticket.UserTicket;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

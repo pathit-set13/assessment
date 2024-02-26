@@ -1,6 +1,6 @@
 package com.kbtg.bootcamp.posttest.lottery;
 
-import com.kbtg.bootcamp.posttest.UserTicket;
+import com.kbtg.bootcamp.posttest.useticket.UserTicket;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

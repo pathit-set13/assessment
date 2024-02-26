@@ -1,4 +1,4 @@
-package com.kbtg.bootcamp.posttest;
+package com.kbtg.bootcamp.posttest.useticket;
 
 import com.kbtg.bootcamp.posttest.lottery.Lottery;
 import com.kbtg.bootcamp.posttest.user.UserAccount;

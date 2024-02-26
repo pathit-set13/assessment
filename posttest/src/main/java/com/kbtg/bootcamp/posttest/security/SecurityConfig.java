@@ -1,6 +1,5 @@
 package com.kbtg.bootcamp.posttest.security;
 
-import com.kbtg.bootcamp.posttest.service.AuthenticationUserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
