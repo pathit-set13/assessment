@@ -29,8 +29,8 @@ CREATE TABLE user_ticket (
 --Initial data
 INSERT INTO lottery(ticket, price, amount)
 VALUES
-    ('000000', 80, 1),
-    ('999999', 80, 1);
+    ('000001', 80, 1),
+    ('000002', 80, 1);
 
 INSERT INTO user_account (user_name, user_password, user_role)
 VALUES
