@@ -16,8 +16,11 @@ public class LotteryService {
         this.lotteryRepository = lotteryRepository;
     }
 
-    public List<Lottery> getLotteryList() {
-        return lotteryRepository.findAll();
+    public List<LotteryResponse> getLotteryList() {
+        return lotteryRepository.findAll()
+                .stream()
+                .map(ticket -> new LotteryResponse(ticket.getTicket()))
+                .toList();
     }
 
     public Lottery addLotteryTicket(LotteryRequestDto request) throws Exception{
