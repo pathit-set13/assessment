@@ -1,5 +1,7 @@
 package com.kbtg.bootcamp.posttest.user;
 
+import com.kbtg.bootcamp.posttest.lottery.Lottery;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -11,9 +13,11 @@ public class UserService {
     List<UserAccount> userAccountList = new ArrayList<>();
 
     private final UserAccount userAccount;
+    private final Lottery lottery;
 
-    public UserService(UserAccount userAccount) {
+    public UserService(UserAccount userAccount, Lottery lottery) {
         this.userAccount = userAccount;
+        this.lottery = lottery;
     }
 
     public UserAccount userAccessEndPoint() {
