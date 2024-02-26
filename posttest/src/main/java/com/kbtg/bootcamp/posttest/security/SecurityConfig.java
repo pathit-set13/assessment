@@ -1,6 +1,6 @@
 package com.kbtg.bootcamp.posttest.security;
 
-import com.kbtg.bootcamp.posttest.service.AuthenUserDetailService;
+import com.kbtg.bootcamp.posttest.service.AuthenticationUserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -19,10 +19,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final AuthenUserDetailService authenUserDetailService;
+    private final AuthenticationUserDetailService authenticationUserDetailService;
 
-    public SecurityConfig(AuthenUserDetailService authenUserDetailService) {
-        this.authenUserDetailService = authenUserDetailService;
+    public SecurityConfig(AuthenticationUserDetailService authenticationUserDetailService) {
+        this.authenticationUserDetailService = authenticationUserDetailService;
     }
 
     @Bean
@@ -50,7 +50,7 @@ public class SecurityConfig {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         final DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(authenUserDetailService);
+        authenticationProvider.setUserDetailsService(authenticationUserDetailService);
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         return authenticationProvider;
     }

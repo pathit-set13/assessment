@@ -1,5 +1,6 @@
 package com.kbtg.bootcamp.posttest.lottery;
 
+import com.kbtg.bootcamp.posttest.UserTicket;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +32,8 @@ public class Lottery {
     public void setTicket(String ticket) {
     }
 
-    //    @ManyToOne
-//    @JoinColumn(name = "ticket")
-//    private
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ticket")
+    private UserTicket userTicket;
+
 }

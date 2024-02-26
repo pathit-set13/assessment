@@ -1,5 +1,6 @@
 package com.kbtg.bootcamp.posttest.user;
 
+import com.kbtg.bootcamp.posttest.UserTicket;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +27,10 @@ public class UserAccount implements UserDetails {
 
     @Column(name = "user_password")
     private final String password;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId")
+    private UserTicket userTicket;
 
     public UserAccount(String username, String password) {
         this.username = username;
