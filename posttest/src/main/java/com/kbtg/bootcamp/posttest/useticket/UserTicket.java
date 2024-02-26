@@ -13,13 +13,23 @@ import java.util.List;
 @Table(name = "user_ticket")
 public class UserTicket {
 
+    @Setter
+    @Column(name = "userId")
+    private Integer userId;
+
+    @Setter
+    @Column(name = "ticketId")
+    private String ticketId;
+
     @OneToMany(mappedBy = "user_account", cascade = CascadeType.ALL)
     private final List<UserAccount> userAccountList;
 
     @OneToMany(mappedBy = "lottery")
     private final List<Lottery> lotteries;
 
-    public UserTicket(List<UserAccount> userAccountList, List<Lottery> lotteries) {
+    public UserTicket(Integer userId, String ticketId, List<UserAccount> userAccountList, List<Lottery> lotteries) {
+        this.userId = userId;
+        this.ticketId = ticketId;
         this.userAccountList = userAccountList;
         this.lotteries = lotteries;
     }

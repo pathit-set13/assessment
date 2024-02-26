@@ -33,6 +33,10 @@ public class Lottery {
     }
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ticketId")
+    private UserTicket userTicketId;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ticket")
     private UserTicket userTicket;
 

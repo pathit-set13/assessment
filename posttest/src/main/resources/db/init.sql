@@ -20,9 +20,11 @@ CREATE TABLE user_account (
 
 CREATE TABLE user_ticket (
     userId INTEGER,
+    ticketId INTEGER,
     ticket VARCHAR(6),
     amount INTEGER,
     FOREIGN KEY (userId) REFERENCES user_account(userId),
+    FOREIGN KEY (ticketId) REFERENCES lottery(ticketId),
     FOREIGN KEY (ticket) REFERENCES lottery(ticket)
 );
 
