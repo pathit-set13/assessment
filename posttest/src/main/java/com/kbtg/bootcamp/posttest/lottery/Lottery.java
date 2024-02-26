@@ -31,7 +31,7 @@ public class Lottery {
     public void setTicket(String ticket) {
     }
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn(name = "ticket")
 //    private
 }
